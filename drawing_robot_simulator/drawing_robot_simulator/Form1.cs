@@ -148,6 +148,8 @@ namespace drawing_robot_simulator
             }
         }
 
+        //test
+
         private void StartDrawingButton_Click(object sender, EventArgs e)
         {
             Sheet.Image = BotDraw;
