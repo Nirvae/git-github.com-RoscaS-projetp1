@@ -148,7 +148,26 @@ namespace drawing_robot_simulator
             }
         }
 
-        //test
+        void DrawArm (Point SheetCoord)
+        {
+            SheetCoord.X += Sheet.Left;
+            SheetCoord.Y += Sheet.Top;
+
+            int nbIntersections = FindCircleCircleIntersections((float)SheetCoord.X, (float)SheetCoord.Y, (float)Arm_2.armLength, Arm_1.PointA.X, Arm_1.PointA.Y, (float)Arm_1.armLength, out i1, out i2);
+
+            Arm_1.PointB = i1;
+            Arm_2.PointA = Arm_1.PointB;
+            Arm_2.PointB = SheetCoord;
+
+            Sheet.Refresh();
+
+            lblDevArm1BaseAxis.Text = "1A: " + (Convert.ToString(Arm_1.PointA));
+            lblDevArm1RayAxis.Text = "1B: " + (Convert.ToString(Arm_1.PointB));
+            lblDevArm2BaseAxis.Text = "2A: " + (Convert.ToString(Arm_2.PointA));
+            lblDevArm2RayAxis.Text = "2B: " + (Convert.ToString(Arm_2.PointB));
+
+            Application.DoEvents();
+        }
 
         private void StartDrawingButton_Click(object sender, EventArgs e)
         {
@@ -157,30 +176,30 @@ namespace drawing_robot_simulator
             ThumbnailBox.Image = ToDraw;
 
             DrawPointList = SortByDistance(DrawPointList);
+            Point SheetCoord = new Point();
 
             foreach (Point P in DrawPointList)
             {
-                Point SheetCoord = P;
+                int changeX = P.X - SheetCoord.X;
+                int changeY = P.Y - SheetCoord.Y;
+
+                for (int i = 0; i < Math.Abs(changeX); i++)
+                {
+                    SheetCoord.X+= changeX / Math.Abs(changeX);
+                    DrawArm(SheetCoord);
+                }
+
+                for (int i = 0; i < Math.Abs(changeY); i++)
+                {
+                    SheetCoord.Y += changeY / Math.Abs(changeY);
+                    DrawArm(SheetCoord);
+                }
+                
+                SheetCoord = P;
 
                 BotDraw.SetPixel(SheetCoord.X, SheetCoord.Y, Color.Black);
 
-                SheetCoord.X += Sheet.Left;
-                SheetCoord.Y += Sheet.Top;
-
-                int nbIntersections = FindCircleCircleIntersections((float)SheetCoord.X, (float)SheetCoord.Y, (float)Arm_2.armLength, Arm_1.PointA.X, Arm_1.PointA.Y, (float)Arm_1.armLength, out i1, out i2);
-
-                Arm_1.PointB = i1;
-                Arm_2.PointA = Arm_1.PointB;
-                Arm_2.PointB = SheetCoord;
-
-                Sheet.Refresh();
-
-                lblDevArm1BaseAxis.Text = "1A: " + (Convert.ToString(Arm_1.PointA));
-                lblDevArm1RayAxis.Text = "1B: " + (Convert.ToString(Arm_1.PointB));
-                lblDevArm2BaseAxis.Text = "2A: " + (Convert.ToString(Arm_2.PointA));
-                lblDevArm2RayAxis.Text = "2B: " + (Convert.ToString(Arm_2.PointB));
-
-                Application.DoEvents();
+                DrawArm(SheetCoord);
             }
             
         }

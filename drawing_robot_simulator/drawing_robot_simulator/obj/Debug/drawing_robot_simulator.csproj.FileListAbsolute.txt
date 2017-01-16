@@ -38,3 +38,9 @@ C:\Users\erwan.bueche\he-arc-inf-1617-dlm-p1-g5\drawing_robot_simulator\drawing_
 C:\Users\erwan.bueche\Documents\git-github.com-RoscaS-projetp1.git\drawing_robot_simulator\drawing_robot_simulator\bin\Debug\drawing_robot_simulator.exe.config
 C:\Users\erwan.bueche\Documents\git-github.com-RoscaS-projetp1.git\drawing_robot_simulator\drawing_robot_simulator\obj\Debug\drawing_robot_simulator.exe
 C:\Users\erwan.bueche\Documents\git-github.com-RoscaS-projetp1.git\drawing_robot_simulator\drawing_robot_simulator\obj\Debug\drawing_robot_simulator.pdb
+C:\Users\erwan.bueche\Documents\git-github.com-RoscaS-projetp1.git\drawing_robot_simulator\drawing_robot_simulator\bin\Debug\drawing_robot_simulator.exe
+C:\Users\erwan.bueche\Documents\git-github.com-RoscaS-projetp1.git\drawing_robot_simulator\drawing_robot_simulator\bin\Debug\drawing_robot_simulator.pdb
+C:\Users\erwan.bueche\Documents\git-github.com-RoscaS-projetp1.git\drawing_robot_simulator\drawing_robot_simulator\obj\Debug\drawing_robot_simulator.csprojResolveAssemblyReference.cache
+C:\Users\erwan.bueche\Documents\git-github.com-RoscaS-projetp1.git\drawing_robot_simulator\drawing_robot_simulator\obj\Debug\drawing_robot_simulator.Form1.resources
+C:\Users\erwan.bueche\Documents\git-github.com-RoscaS-projetp1.git\drawing_robot_simulator\drawing_robot_simulator\obj\Debug\drawing_robot_simulator.Properties.Resources.resources
+C:\Users\erwan.bueche\Documents\git-github.com-RoscaS-projetp1.git\drawing_robot_simulator\drawing_robot_simulator\obj\Debug\drawing_robot_simulator.csproj.GenerateResource.Cache
